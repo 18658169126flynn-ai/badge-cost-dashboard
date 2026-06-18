@@ -353,7 +353,7 @@ new Chart(document.getElementById('componentChart'), {
 // 基于最新成本表数据
 const bomItems = [
   { cat:'电子料', name:'存储 2+16', base:50, current:382, risk:'high', note:'DRAM危机持续！Q1合约价环比涨90-95%，6月中继续上行至¥382。三星/SK海力士产能转向HBM。' },
-  { cat:'电子料', name:'64G TF卡（客供）', base:20.3, current:52, risk:'mid', note:'NAND Q1合约价涨55-60%，NOR Flash/SLC NAND半年涨100%+。6月TF卡回升至¥52。' },
+  { cat:'电子料', name:'64G TF卡（客供）', base:20.3, current:52, risk:'high', note:'⚠️ 7月1日希捷/西数全线大涨！NAND持续走高，TF卡预计突破¥60。建议尽快锁价备货。' },
   { cat:'电子料', name:'主控 SL8541E+SC2721G+SR3593A', base:70, current:82, risk:'mid', note:'8寸晶圆代工涨价5-20%，封测成本涨近30%。展锐平台供应相对稳定。' },
   { cat:'PCB', name:'PCB光板', base:8, current:17.5, risk:'high', note:'建滔6/16第5次涨价+15%！年内累计超55%。铜价高位+玻璃布紧缺。' },
   { cat:'电子料', name:'电子料及产测', base:32, current:42, risk:'mid', note:'MLCC史诗级涨价！消费类涨15-20%，累计涨幅65%。0201规格缺货严重。' },
@@ -411,8 +411,8 @@ const risks = [
     text: '8英寸晶圆产能持续收缩，产能利用率攀升至85-90%，代工价格上调5-20%，封测成本涨幅接近30%。展锐平台供应相对稳定，但上游成本压力在传导。建议：确认展锐长协价是否覆盖本次涨价周期。'
   },
   {
-    title: '🟡 64G TF卡（客供）', cls:'risk-mid',
-    text: '顾硕电子客供，MOQ 350。价格从¥20.3涨至3月高点¥77.3（+280%），6月回落至¥45.5（+124%）。随NAND价格剧烈波动，3月冲高后回调。建议：关注NAND走势，适时锁价备货。'
+    title: '🔴 64G TF卡（客供）', cls:'risk-high',
+    text: '⚠️ 紧急预警：希捷/西数7月1日起出厂价全线大涨，涨幅创近年新高！华为/联想同步调价。NAND持续走高，TF卡预计突破¥60。建议：尽快按现价锁单备货！'
   },
   {
     title: '🟢 水墨屏 2.13寸', cls:'risk-low',
@@ -433,8 +433,9 @@ document.getElementById('riskCards').innerHTML = riskHTML;
 const news = [
   { comp:'存储', text:'DRAM危机持续！Q1合约价环比涨90-95%创历史新高，德国32GB内存条价格涨4倍+。HBM投片占比升至30%，通用DRAM供给严重紧缩。', src:'Notebookcheck/TrendForce', time:'2026.06' },
   { comp:'存储', text:'NOR Flash/SLC NAND半年涨幅突破100%！存储巨头产能战略转移带来供给永久性收缩，与2023年周期反弹本质不同。', src:'网易/TrendForce', time:'2026.06' },
-  { comp:'PCB/CCL', text:'建滔CCL年内已涨价4次累计超40%，6月再涨20%。NVIDIA亲自抢购HVLP4铜箔，2026年缺口1500吨。PCB超级周期确立。', src:'东方财富/OFweek', time:'2026.06' },
-  { comp:'PCB/CCL', text:'电子布翻倍暴涨，T-glass玻纤布缺口超40%。覆铜板从M7/M8进阶至M9级别，Rubin Ultra正交背板达78层。', src:'雪球/国金证券', time:'2026.06' },
+  { comp:'PCB/CCL', text:'建滔6/16第5次涨价+15%！年内累计超55%。铜价高位+玻纤布紧缺，PCB成本持续上行。', src:'建滔涨价函', time:'2026.06.16' },
+  { comp:'存储', text:'⚠️ 紧急：希捷/西数7月1日起出厂价全线大涨！涨幅创近年新高，华为/联想同步调价。西数股价单日涨45%。', src:'厂商涨价通知', time:'2026.06.18' },
+  { comp:'PCB/CCL', text:'电子布翻倍暴涨，T-glass玻纤布缺口超40%。覆铜板从M7/M8进阶至M9级别。', src:'雪球/国金证券', time:'2026.06' },
   { comp:'MLCC', text:'MLCC史诗级涨价潮！消费类涨15-20%，AI服务器用高容涨50-60%。村田/三星电机稼动率90%+，华强北多款断货。7月日系第二轮涨价即将落地。', src:'36氪/证券市场周刊', time:'2026.06' },
   { comp:'MLCC', text:'国巨旗下基美6月再次涨价，累计涨幅较去年达65%。涨价从中小厂→龙头、国产→国际巨头逐步扩散。', src:'36氪', time:'2026.06' },
   { comp:'电池', text:'碳酸锂从20.5万高点回落至16.95万/吨，高盛预测Q4价格中枢20万/吨峰值25万。储能成为锂电池第一增长引擎。', src:'SMM/澎湃新闻', time:'2026.06' },
